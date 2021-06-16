@@ -15,7 +15,7 @@ import { Link } from 'react-router-dom';
     };
   }*/
 
-  function renderDish({dish}) {
+  function RenderDish({dish}) {
     if (dish != null) {
       return (
         <div className="col-12 col-md-5 m-1">
@@ -33,7 +33,7 @@ import { Link } from 'react-router-dom';
     }
   }
 
-  function renderComments({comments}) {
+  function RenderComments({comments}) {
     if (comments == null) {
       return <div> </div>;
     }
@@ -56,6 +56,7 @@ import { Link } from 'react-router-dom';
     return (
       <div className="col-12 col-md-5 m-1">
         <h4> Comments </h4> <ul className="list-unstyled"> {cmnts} </ul>
+     
       </div>
     );
   }
@@ -97,12 +98,8 @@ const DishDetail = (props) => {
         </div>                
     </div>
     <div className="row">
-        <div className="col-12 col-md-5 m-1">
-            <renderDish dish={props.dish} />
-        </div>
-        <div className="col-12 col-md-5 m-1">
-            <renderComments comments={props.comments} />
-        </div>
+            <RenderDish dish={props.dish} />
+            <RenderComments comments={props.comments} />
     </div>
     </div>
 );
